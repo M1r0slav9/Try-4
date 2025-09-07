@@ -1,20 +1,18 @@
 <template>
   <div id="app">
-    <ProductList />
+    <router-view></router-view>
     <FooterComponent />
   </div>
 </template>
 
 <script>
-import ProductList from './components/ProductList.vue';
 import FooterComponent from './components/FooterComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    ProductList,
-    FooterComponent
-  }
+    FooterComponent,
+  },
 };
 </script>
 
@@ -25,7 +23,7 @@ export default {
   min-height: 100vh;
 }
 
-#app > *:not(:last-child) {
-  flex-shrink: 0;
+#app > router-view {
+  flex: 1;
 }
 </style>
