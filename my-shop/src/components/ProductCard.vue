@@ -1,78 +1,70 @@
 <template>
   <div class="product-card">
-    <img 
-      class="product-image" 
-      :src="image" 
-      :alt="name" 
-    />
-    <h2>{{ name }}</h2>
+    <img :src="image" :alt="name" />
+    <h3>{{ name }}</h3>
     <p>{{ description }}</p>
     <p class="price">{{ price }} грн</p>
-    <button class="buy-button">Купити</button>
+    <button @click="addToCartHandler">Додати в кошик</button>
   </div>
 </template>
 
 <script>
+import { inject } from "vue";
+
 export default {
-  name: 'ProductCard',
+  name: "ProductCard",
   props: {
-    name: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String,
-      required: true
-    },
-    price: {
-      type: Number,
-      required: true
-    },
-    image: {
-      type: String,
-      required: true
-    }
-  }
+    name: String,
+    description: String,
+    price: Number,
+    image: String,
+  },
+  setup(props) {
+    const addToCart = inject("addToCart");
+
+    const addToCartHandler = () => {
+      addToCart({
+        name: props.name,
+        description: props.description,
+        price: props.price,
+        image: props.image,
+      });
+    };
+
+    return { addToCartHandler };
+  },
 };
 </script>
 
 <style scoped>
 .product-card {
-  max-width: 300px;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
   text-align: center;
-  padding: 16px;
+  width: 200px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
-.product-image {
+.product-card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
   border-radius: 8px;
 }
-
 .price {
-  font-size: 18px;
   font-weight: bold;
-  color: #28a745;
   margin: 10px 0;
 }
-
-.buy-button {
-  background-color: #007bff;
-  color: #fff;
-  font-weight: bold;
+button {
+  background-color: #42b983;
+  color: white;
   border: none;
+  padding: 8px 12px;
   border-radius: 6px;
-  padding: 10px 20px;
   cursor: pointer;
-  margin-bottom: 20px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
-
-.buy-button:hover {
-  background-color: #0056b3;
+button:hover {
+  background-color: #369d6e;
 }
 </style>

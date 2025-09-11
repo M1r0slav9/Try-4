@@ -6,7 +6,8 @@
       :name="product.name"
       :description="product.description"
       :price="product.price"
-      :image="product.image" />
+      :image="product.image"
+    />
   </div>
 </template>
 
@@ -14,10 +15,9 @@
 import ProductCard from './ProductCard.vue';
 
 export default {
-    name: 'ProductList',
-    components: { ProductCard },
-  
-    props: {
+  name: "ProductList",
+  components: { ProductCard },
+  props: {
     products: {
       type: Array,
       required: true,

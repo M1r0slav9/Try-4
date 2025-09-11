@@ -2,7 +2,8 @@
   <div class="admin-dashboard">
     <nav>
       <router-link to="/admin/products">Керування продуктами</router-link> |
-      <router-link to="/admin/reviews">Відгуки</router-link>
+      <router-link to="/admin/reviews">Відгуки</router-link> |
+      <router-link to="/login">Кабінет</router-link>
     </nav>
     <main>
       <router-view></router-view>

@@ -1,19 +1,18 @@
 <template>
-  <div class="manage-reviews">
+  <div>
     <h2>Список відгуків</h2>
-    <!-- Тут пізніше буде компонент ReviewsComponent -->
+    <ReviewsComponent />
   </div>
 </template>
 
 <script>
+import ReviewsComponent from '@/components/ReviewsComponent.vue';
+
 export default {
-  name: 'ManageReviews',
+  name: 'ManageProducts',
+  components: {
+    ReviewsComponent,
+  },
 };
 </script>
 
-<style scoped>
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-</style>
