@@ -1,10 +1,20 @@
 [
-    {
-        "username": "admin",
-        "password": "123456"
-    },
-    {
-        "username": "miro",
-        "password": "123"
-    }
+  {
+    "username": "admin",
+    "password": "123456",
+    "name": "Адміністратор",
+    "role": "SuperAdmin",
+    "phone": "+380991112233",
+    "email": "admin@example.com",
+    "photo": "https://via.placeholder.com/100"
+  },
+  {
+    "username": "miro",
+    "password": "123",
+    "name": "Мирослав",
+    "role": "Editor",
+    "phone": "+380671234567",
+    "email": "miro@example.com",
+    "photo": "https://via.placeholder.com/100"
+  }
 ]
